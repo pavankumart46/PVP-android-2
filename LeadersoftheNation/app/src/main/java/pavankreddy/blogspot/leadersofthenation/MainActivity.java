@@ -1,6 +1,7 @@
 package pavankreddy.blogspot.leadersofthenation;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
@@ -15,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerview);
         setData();
+        RvAdapter rvAdapter =
+                new RvAdapter(this,images,leader_names,info);
+        recyclerView.setAdapter(rvAdapter);
+        recyclerView.setLayoutManager(
+                new LinearLayoutManager(this));
     }
 
     private void setData()
